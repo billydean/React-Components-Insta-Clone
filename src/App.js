@@ -31,9 +31,10 @@ const [searchTerm, setSearchTerm] = useState("");
         - if the `id` of the post matches `postId`, return a new post object with the desired values (use the spread operator).
         - otherwise just return the post object unchanged.
      */
-    setPosts(posts.map(post => {
+    const updatedLikes = posts.map(post => {
       return post.id === postId ? { ... post, likes: post.likes++ } : post;
-    }))
+    });
+    setPosts(updatedLikes);
   };
 
   return (
